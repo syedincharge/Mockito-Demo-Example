@@ -2,7 +2,6 @@ package com.rizvi.mockito.MockitoDemoExample.services.springdatajpa;
 
 import com.rizvi.mockito.MockitoDemoExample.model.Speciality;
 import com.rizvi.mockito.MockitoDemoExample.repositories.SpecialtyRepository;
-import com.rizvi.mockito.MockitoDemoExample.services.SpecialtyService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
