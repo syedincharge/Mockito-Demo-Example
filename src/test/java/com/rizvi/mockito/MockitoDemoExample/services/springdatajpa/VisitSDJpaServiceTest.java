@@ -2,6 +2,7 @@ package com.rizvi.mockito.MockitoDemoExample.services.springdatajpa;
 
 import com.rizvi.mockito.MockitoDemoExample.model.Visit;
 import com.rizvi.mockito.MockitoDemoExample.repositories.VisitRepository;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -29,6 +30,7 @@ class VisitSDJpaServiceTest {
     VisitSDJpaService service;
 
     @Test
+    @DisplayName("Test for FindAll")
     void findAll() {
         Visit visit = new Visit();
         Set<Visit> visits = new HashSet<>();
@@ -41,6 +43,7 @@ class VisitSDJpaServiceTest {
     }
 
     @Test
+    @DisplayName("Test for FindById")
     void findById() {
         Visit visit = new Visit();
         when(visitRepository.findById(anyLong())).thenReturn(Optional.of(visit));
@@ -50,6 +53,7 @@ class VisitSDJpaServiceTest {
     }
 
     @Test
+    @DisplayName("Test for Save")
     void save() {
         Visit visit = new Visit();
 
@@ -61,6 +65,7 @@ class VisitSDJpaServiceTest {
     }
 
     @Test
+    @DisplayName("Test for Delete")
     void delete() {
         Visit visit = new Visit();
 
@@ -71,7 +76,10 @@ class VisitSDJpaServiceTest {
     }
 
     @Test
-    void deleteById() {
 
+    @DisplayName("Test for DeleteById")
+    void deleteById() {
+       service.deleteById(1L);
+       verify(visitRepository).deleteById(any());
     }
 }
