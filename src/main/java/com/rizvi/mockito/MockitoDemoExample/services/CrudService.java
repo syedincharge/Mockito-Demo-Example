@@ -1,4 +1,4 @@
-package com.rizvi.mockito.MockitoDemoExample.services.springdatajpa;
+package com.rizvi.mockito.MockitoDemoExample.services;
 
 import java.util.Set;
 

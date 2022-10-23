@@ -1,7 +1,6 @@
 package com.rizvi.mockito.MockitoDemoExample.services;
 
 import com.rizvi.mockito.MockitoDemoExample.model.Vet;
-import com.rizvi.mockito.MockitoDemoExample.services.springdatajpa.CrudService;
 
 import java.util.Set;
 
