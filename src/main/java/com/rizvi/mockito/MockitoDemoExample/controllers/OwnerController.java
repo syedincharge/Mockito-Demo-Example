@@ -23,13 +23,7 @@ public class OwnerController {
     public void setAllowedFields(WebDataBinder dataBinder) {
         dataBinder.setDisallowedFields("id");
     }
-
-    public String findOwners(Model model){
-        model.addAttribute("owner", new Owner(null, null, null));
-        return "owners/findOwners";
-    }
-
-    public String processFindForm(Owner owner, BindingResult result, Model model){
+ public String processFindForm(Owner owner, BindingResult result, Model model){
         // allow parameterless GET request for /owners to return all records
         if (owner.getLastName() == null) {
             owner.setLastName(""); // empty string signifies broadest possible search
