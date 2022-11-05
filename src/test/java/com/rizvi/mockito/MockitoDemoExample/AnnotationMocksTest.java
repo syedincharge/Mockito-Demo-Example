@@ -8,15 +8,12 @@ import org.mockito.MockitoAnnotations;
 import java.util.Map;
 
 public class AnnotationMocksTest {
-
     @Mock
     Map<String,Object> mapMock;
-
     @BeforeEach
     void seUp(){
         MockitoAnnotations.initMocks(this);
     }
-
     @Test
     void testMock(){
 
