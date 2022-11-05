@@ -26,6 +26,40 @@ class SpecialitySDJpaServiceTest {
     private SpecialitySDJpaService service;
 
     @Test
+    void testDeleteByObject(){
+        // Given
+        Speciality speciality = new Speciality();
+        // when
+        service.delete(speciality);
+        verify(specialtyRepository).delete(any(Speciality.class));
+
+        // then
+        // then(specialtyRepository).should().delete(any(Speciality.class));
+
+    }
+
+    @Test
+    void findByIdTest() {
+        // Given
+        Speciality speciality = new Speciality();
+
+        when(specialtyRepository.findById(1l)).thenReturn(Optional.of(speciality));
+        Speciality foundSpeciality = service.findById(1l);
+        assertThat(foundSpeciality).isNotNull();
+        verify(specialtyRepository,times(1)).findById(anyLong());
+
+//        given(specialtyRepository.findById(1L)).willReturn(Optional.of(speciality));
+//        // whem
+//        Speciality foundSpeciality = service.findById(1L);
+//        // then
+//        assertThat(foundSpeciality).isNotNull();
+//        then(specialtyRepository).should(times(1)).findById(anyLong());
+//        then(specialtyRepository).should(timeout(200)).findById(anyLong());
+//        then(specialtyRepository).shouldHaveNoMoreInteractions();
+
+    }
+
+    @Test
     void testDelete() {
         // given = none
 
@@ -34,16 +68,7 @@ class SpecialitySDJpaServiceTest {
         //then
         //    then(specialtyRepository).should(timeout(100)).delete(any());
     }
-    @Test
-    void testDeleteByObject(){
-        // Given
-        Speciality speciality = new Speciality();
-        // when
-        service.delete(speciality);
-        // then
-        then(specialtyRepository).should().delete(any(Speciality.class));
 
-    }
     @Test
     void testDeleteById() {
         //given = none
@@ -51,25 +76,8 @@ class SpecialitySDJpaServiceTest {
         // when
         service.deleteById(1L);
         // then
-    //    then(specialtyRepository).should().deleteById(1L);
+        //    then(specialtyRepository).should().deleteById(1L);
     }
-
-    @Test
-    void findByIdTest() {
-         // Given
-        Speciality speciality = new Speciality();
-        given(specialtyRepository.findById(1L)).willReturn(Optional.of(speciality));
-         // whem
-        Speciality foundSpeciality = service.findById(1L);
-        // then
-        assertThat(foundSpeciality).isNotNull();
-        then(specialtyRepository).should(times(1)).findById(anyLong());
-        then(specialtyRepository).should(timeout(200)).findById(anyLong());
-        then(specialtyRepository).shouldHaveNoMoreInteractions();
-
-    }
-
-
     @Test
     void deleteById() {
         // Given = none
