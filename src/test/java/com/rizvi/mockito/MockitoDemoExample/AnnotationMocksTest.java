@@ -16,8 +16,6 @@ public class AnnotationMocksTest {
     }
     @Test
     void testMock(){
-
         mapMock.put("keyvalue","foo");
     }
-
 }
