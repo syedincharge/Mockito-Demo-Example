@@ -6,6 +6,7 @@ import com.rizvi.mockito.MockitoDemoExample.model.Owner;
 import com.rizvi.mockito.MockitoDemoExample.services.OwnerService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
@@ -104,7 +105,7 @@ class OwnerControllerTest {
         assertThat("owners/findOwners").isEqualToIgnoringCase(viewName);
         verifyNoInteractions(model);
     }
-
+  @Disabled
     @Test
     void processCreationFormHasErrors() {
         //given
@@ -118,7 +119,7 @@ class OwnerControllerTest {
      assertThat(viewName).isEqualToIgnoringCase(OWNERS_CREATE_OR_UPDATE_OWNER_FORM);
     }
 
-
+@Disabled
     @Test
     void processCreationFormNotErrors() {
 
